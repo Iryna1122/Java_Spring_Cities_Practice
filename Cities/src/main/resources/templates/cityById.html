@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+
+<header th:insert="services/header :: header"></header>
+<main>
+  <div class="container">
+    <h1 th:text="${city.getTitle()}"></h1>
+
+
+    <p th:text="${city.getPopulation()}"></p>
+    <p th:text="${city.getDescription()}"></p>
+    <p th:text="${city.getLongitude()}"></p>
+    <p th:text="${city.getLatitude()}"></p>
+    <a th:href="'/editCity/'+${city.getId()}" class="btn btn-success">EDIT</a>
+    <a th:href="'/cityDelete/'+${city.getId()}" class="btn btn-info">REMOVE</a>
+
+  </div>
+
+</main>
+<footer th:insert="services/footer :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit City</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<header th:insert="services/header :: header"></header>
+<main>
+
+  <div class="container mt-10">
+
+    <form method="post" th:action="@{'/cityEditSave/' + ${city.getId()}}">
+      <input type="text" name="title" class="form-control col-md-7" placeholder="Title" th:value="${city.getTitle()}"><br>
+      <input type="number" name="population" class="form-control col-md-7" placeholder="Population" th:value="${city.getPopulation()}"><br>
+      <input type="text" name="description" class="form-control col-md-7" placeholder="Description" th:value="${city.getDescription()}"><br>
+      <input type="number" name="longitude" class="form-control col-md-7" placeholder="Longitude" th:value="${city.getLongitude()}"><br>
+      <input type="number" name="latitude" class="form-control col-md-7" placeholder="Latitude" th:value="${city.getLatitude()}"><br>
+
+      <br>
+
+      <input type="submit"  value="EDIT" class="col-md-7">
+    </form>
+
+  </div>
+</main>
+<footer th:insert="services/footer :: footer"></footer>
+
+</body>
+</html>
